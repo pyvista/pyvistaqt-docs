@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PyVista PyQt Interface &mdash; PyVista 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Getting Started" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/pyvista_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyVista PyQt Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-pyqt5-pyvista-qtinteractor">Example PyQt5 PyVista QtInteractor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background-plotting">Background Plotting</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyVista</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>PyVista PyQt Interface</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pyvista-pyqt-interface">
+<span id="qt-ref"></span><h1>PyVista PyQt Interface<a class="headerlink" href="#pyvista-pyqt-interface" title="Permalink to this headline">¶</a></h1>
+<p>PyVista has an interface for placing plots in <code class="docutils literal notranslate"><span class="pre">pyvista_qt</span></code> that extends the
+functionality of the <code class="docutils literal notranslate"><span class="pre">QVTKRenderWindowInteractor</span></code> class.
+The <code class="docutils literal notranslate"><span class="pre">pyvista_qt.QtInteractor</span></code> class allows you to have the same functionality
+of the <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> class within a <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> application.
+This simplifies adding meshes, updating, and controlling them when using
+<code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>.</p>
+<div class="section" id="example-pyqt5-pyvista-qtinteractor">
+<h2>Example PyQt5 PyVista QtInteractor<a class="headerlink" href="#example-pyqt5-pyvista-qtinteractor" title="Permalink to this headline">¶</a></h2>
+<p>The following example shows how to create a simple application that adds a
+sphere to an empty plotting window.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">PyQt5</span> <span class="kn">import</span> <span class="n">Qt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista_qt</span> <span class="kn">import</span> <span class="n">QtInteractor</span>
+
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">Qt</span><span class="o">.</span><span class="n">QMainWindow</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+
+        <span class="c1"># create the frame</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QFrame</span><span class="p">()</span>
+        <span class="n">vlayout</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QVBoxLayout</span><span class="p">()</span>
+
+        <span class="c1"># add the pyvista interactor object</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span> <span class="o">=</span> <span class="n">QtInteractor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="p">)</span>
+        <span class="n">vlayout</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">interactor</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">setLayout</span><span class="p">(</span><span class="n">vlayout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="p">)</span>
+
+        <span class="c1"># simple menu to demo functions</span>
+        <span class="n">mainMenu</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">menuBar</span><span class="p">()</span>
+        <span class="n">fileMenu</span> <span class="o">=</span> <span class="n">mainMenu</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s1">&#39;File&#39;</span><span class="p">)</span>
+        <span class="n">exitButton</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Exit&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="n">exitButton</span><span class="o">.</span><span class="n">setShortcut</span><span class="p">(</span><span class="s1">&#39;Ctrl+Q&#39;</span><span class="p">)</span>
+        <span class="n">exitButton</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">)</span>
+        <span class="n">fileMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="n">exitButton</span><span class="p">)</span>
+
+        <span class="c1"># allow adding a sphere</span>
+        <span class="n">meshMenu</span> <span class="o">=</span> <span class="n">mainMenu</span><span class="o">.</span><span class="n">addMenu</span><span class="p">(</span><span class="s1">&#39;Mesh&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_sphere_action</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QAction</span><span class="p">(</span><span class="s1">&#39;Add Sphere&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_sphere_action</span><span class="o">.</span><span class="n">triggered</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">add_sphere</span><span class="p">)</span>
+        <span class="n">meshMenu</span><span class="o">.</span><span class="n">addAction</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">add_sphere_action</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">show</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">add_sphere</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; add a sphere to the pyqt frame &quot;&quot;&quot;</span>
+        <span class="n">sphere</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plotter</span><span class="o">.</span><span class="n">reset_camera</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">.</span><span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="_images/qt_plotting_sphere.png"><img alt="_images/qt_plotting_sphere.png" src="_images/qt_plotting_sphere.png" style="width: 600pt;" /></a>
+<p class="caption"><span class="caption-text">PyQt5 pyvista QtInteractor</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="background-plotting">
+<h2>Background Plotting<a class="headerlink" href="#background-plotting" title="Permalink to this headline">¶</a></h2>
+<p>Normal PyVista plotting windows exhibit blocking behavior, but it is possible
+to plot in the background and update the plotter in real-time using the
+<code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> object.  This requires <code class="docutils literal notranslate"><span class="pre">pyvista-qt</span></code>, but otherwise appears
+and functions like a normal PyVista <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> instance.  For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista_qt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
+
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">()</span>
+
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">BackgroundPlotter</span><span class="p">()</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
+
+<span class="c1"># can now operate on the sphere and have it updated in the background</span>
+<span class="n">sphere</span><span class="o">.</span><span class="n">points</span> <span class="o">*=</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.ICON_TIME_STEP" title="pyvista_qt.BackgroundPlotter.ICON_TIME_STEP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ICON_TIME_STEP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.window_size" title="pyvista_qt.BackgroundPlotter.window_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">window_size</span></code></a></p></td>
+<td><p>Return render window size.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.add_callback" title="pyvista_qt.BackgroundPlotter.add_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_callback</span></code></a>(func[, interval, count])</p></td>
+<td><p>Add a function that can update the scene in the background.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.close" title="pyvista_qt.BackgroundPlotter.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close the plotter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.reset_key_events" title="pyvista_qt.BackgroundPlotter.reset_key_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_key_events</span></code></a>()</p></td>
+<td><p>Reset all of the key press events to their defaults.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.scale_axes_dialog" title="pyvista_qt.BackgroundPlotter.scale_axes_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_axes_dialog</span></code></a>([show])</p></td>
+<td><p>Open scale axes dialog.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.update_app_icon" title="pyvista_qt.BackgroundPlotter.update_app_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_app_icon</span></code></a>()</p></td>
+<td><p>Update the app icon if the user is not trying to resize the window.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt id="pyvista_qt.BackgroundPlotter">
+<em class="property">class </em><code class="sig-prename descclassname">pyvista_qt.</code><code class="sig-name descname">BackgroundPlotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">app</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_quit_keypress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">toolbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">menu_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista_qt.plotting.QtInteractor</span></code></p>
+<p>Qt interactive plotter.</p>
+<p>Background plotter for pyvista that allows you to maintain an
+interactive plotting window without blocking the main python
+thread.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<em>bool</em><em>, </em><em>optional</em>) – Show the plotting window.  If <code class="docutils literal notranslate"><span class="pre">False</span></code>, show this window by
+running <code class="docutils literal notranslate"><span class="pre">show()</span></code></p></li>
+<li><p><strong>app</strong> (<em>PyQt5.QtWidgets.QApplication</em><em>, </em><em>optional</em>) – Creates a <cite>QApplication</cite> if left as <cite>None</cite>.</p></li>
+<li><p><strong>window_size</strong> (<em>list</em><em>, </em><em>optional</em>) – Window size in pixels.  Defaults to <code class="docutils literal notranslate"><span class="pre">[1024,</span> <span class="pre">768]</span></code></p></li>
+<li><p><strong>off_screen</strong> (<em>bool</em><em>, </em><em>optional</em>) – Renders off screen when True.  Useful for automated
+screenshots or debug testing.</p></li>
+<li><p><strong>allow_quit_keypress</strong> (<em>bool</em><em>, </em><em>optional</em>) – Allow user to exit by pressing <code class="docutils literal notranslate"><span class="pre">&quot;q&quot;</span></code>.</p></li>
+<li><p><strong>menu_bar</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display the default main menu. Defaults to True.</p></li>
+<li><p><strong>toolbar</strong> (<em>bool</em><em>, </em><em>optional</em>) – Display the default camera toolbar. Defaults to True.</p></li>
+<li><p><strong>title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title of plotting window.</p></li>
+<li><p><strong>multi_samples</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of multi-samples used to mitigate aliasing. 4 is a
+good default but 8 will have better results with a potential
+impact on performance.</p></li>
+<li><p><strong>line_smoothing</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, enable line smothing</p></li>
+<li><p><strong>point_smoothing</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, enable point smothing</p></li>
+<li><p><strong>polygon_smoothing</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, enable polygon smothing</p></li>
+<li><p><strong>auto_update</strong> (<em>float</em><em>, </em><em>bool</em><em>, </em><em>optional</em>) – Automatic update rate in seconds.  Useful for automatically
+updating the render window when actors are change without
+being automatically <code class="docutils literal notranslate"><span class="pre">Modified</span></code>.  If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, update
+rate will be 1 second.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyvista_qt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plotter</span> <span class="o">=</span> <span class="n">BackgroundPlotter</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt id="pyvista_qt.BackgroundPlotter.ICON_TIME_STEP">
+<code class="sig-name descname">ICON_TIME_STEP</code><em class="property"> = 5.0</em><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.ICON_TIME_STEP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyvista_qt.BackgroundPlotter.add_callback">
+<code class="sig-name descname">add_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">interval</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">count</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.add_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a function that can update the scene in the background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>callable</em>) – Function to be called with no arguments.</p></li>
+<li><p><strong>interval</strong> (<em>int</em>) – Time interval between calls to <cite>func</cite> in milliseconds.</p></li>
+<li><p><strong>count</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of times <cite>func</cite> will be called. If None,
+<cite>func</cite> will be called until the main window is closed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvista_qt.BackgroundPlotter.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the plotter.</p>
+<p>This function closes the window which in turn will
+close the plotter through <cite>signal_close</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvista_qt.BackgroundPlotter.reset_key_events">
+<code class="sig-name descname">reset_key_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.reset_key_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset all of the key press events to their defaults.</p>
+<p>Handles closing configuration for q-key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvista_qt.BackgroundPlotter.scale_axes_dialog">
+<code class="sig-name descname">scale_axes_dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.scale_axes_dialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open scale axes dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvista_qt.BackgroundPlotter.update_app_icon">
+<code class="sig-name descname">update_app_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.update_app_icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the app icon if the user is not trying to resize the window.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvista_qt.BackgroundPlotter.window_size">
+<em class="property">property </em><code class="sig-name descname">window_size</code><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.window_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return render window size.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2020, The PyVista Developers
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
