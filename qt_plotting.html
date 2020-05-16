@@ -162,9 +162,9 @@
             
   <div class="section" id="pyvista-pyqt-interface">
 <span id="qt-ref"></span><h1>PyVista PyQt Interface<a class="headerlink" href="#pyvista-pyqt-interface" title="Permalink to this headline">¶</a></h1>
-<p>PyVista has an interface for placing plots in <code class="docutils literal notranslate"><span class="pre">pyvista_qt</span></code> that extends the
+<p>PyVista has an interface for placing plots in <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> that extends the
 functionality of the <code class="docutils literal notranslate"><span class="pre">QVTKRenderWindowInteractor</span></code> class.
-The <code class="docutils literal notranslate"><span class="pre">pyvista_qt.QtInteractor</span></code> class allows you to have the same functionality
+The <code class="docutils literal notranslate"><span class="pre">pyvistaqt.QtInteractor</span></code> class allows you to have the same functionality
 of the <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> class within a <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> application.
 This simplifies adding meshes, updating, and controlling them when using
 <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>.</p>
@@ -178,7 +178,7 @@ sphere to an empty plotting window.</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="kn">from</span> <span class="nn">pyvista_qt</span> <span class="kn">import</span> <span class="n">QtInteractor</span>
+<span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">QtInteractor</span>
 
 <span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
 
@@ -238,7 +238,7 @@ to plot in the background and update the plotter in real-time using the
 <code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> object.  This requires <code class="docutils literal notranslate"><span class="pre">pyvista-qt</span></code>, but otherwise appears
 and functions like a normal PyVista <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> instance.  For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="kn">from</span> <span class="nn">pyvista_qt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
+<span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
 
 <span class="n">sphere</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">()</span>
 
@@ -256,10 +256,10 @@ and functions like a normal PyVista <code class="docutils literal notranslate"><
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.ICON_TIME_STEP" title="pyvista_qt.BackgroundPlotter.ICON_TIME_STEP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ICON_TIME_STEP</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.ICON_TIME_STEP" title="pyvistaqt.BackgroundPlotter.ICON_TIME_STEP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ICON_TIME_STEP</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.window_size" title="pyvista_qt.BackgroundPlotter.window_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">window_size</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.window_size" title="pyvistaqt.BackgroundPlotter.window_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">window_size</span></code></a></p></td>
 <td><p>Return render window size.</p></td>
 </tr>
 </tbody>
@@ -271,27 +271,27 @@ and functions like a normal PyVista <code class="docutils literal notranslate"><
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.add_callback" title="pyvista_qt.BackgroundPlotter.add_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_callback</span></code></a>(func[, interval, count])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.add_callback" title="pyvistaqt.BackgroundPlotter.add_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_callback</span></code></a>(func[, interval, count])</p></td>
 <td><p>Add a function that can update the scene in the background.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.close" title="pyvista_qt.BackgroundPlotter.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.close" title="pyvistaqt.BackgroundPlotter.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
 <td><p>Close the plotter.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.reset_key_events" title="pyvista_qt.BackgroundPlotter.reset_key_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_key_events</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.reset_key_events" title="pyvistaqt.BackgroundPlotter.reset_key_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_key_events</span></code></a>()</p></td>
 <td><p>Reset all of the key press events to their defaults.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.scale_axes_dialog" title="pyvista_qt.BackgroundPlotter.scale_axes_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_axes_dialog</span></code></a>([show])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.scale_axes_dialog" title="pyvistaqt.BackgroundPlotter.scale_axes_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_axes_dialog</span></code></a>([show])</p></td>
 <td><p>Open scale axes dialog.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyvista_qt.BackgroundPlotter.update_app_icon" title="pyvista_qt.BackgroundPlotter.update_app_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_app_icon</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.update_app_icon" title="pyvistaqt.BackgroundPlotter.update_app_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_app_icon</span></code></a>()</p></td>
 <td><p>Update the app icon if the user is not trying to resize the window.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
-<dt id="pyvista_qt.BackgroundPlotter">
-<em class="property">class </em><code class="sig-prename descclassname">pyvista_qt.</code><code class="sig-name descname">BackgroundPlotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">app</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_quit_keypress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">toolbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">menu_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista_qt.plotting.QtInteractor</span></code></p>
+<dt id="pyvistaqt.BackgroundPlotter">
+<em class="property">class </em><code class="sig-prename descclassname">pyvistaqt.</code><code class="sig-name descname">BackgroundPlotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">app</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_quit_keypress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">toolbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">menu_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.plotting.QtInteractor</span></code></p>
 <p>Qt interactive plotter.</p>
 <p>Background plotter for pyvista that allows you to maintain an
 interactive plotting window without blocking the main python
@@ -324,19 +324,19 @@ rate will be 1 second.</p></li>
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyvista_qt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plotter</span> <span class="o">=</span> <span class="n">BackgroundPlotter</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">())</span>
 </pre></div>
 </div>
 <dl class="py attribute">
-<dt id="pyvista_qt.BackgroundPlotter.ICON_TIME_STEP">
-<code class="sig-name descname">ICON_TIME_STEP</code><em class="property"> = 5.0</em><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.ICON_TIME_STEP" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.ICON_TIME_STEP">
+<code class="sig-name descname">ICON_TIME_STEP</code><em class="property"> = 5.0</em><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.ICON_TIME_STEP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="pyvista_qt.BackgroundPlotter.add_callback">
-<code class="sig-name descname">add_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">interval</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">count</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.add_callback" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.add_callback">
+<code class="sig-name descname">add_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">interval</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">count</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.add_callback" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a function that can update the scene in the background.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -351,35 +351,35 @@ rate will be 1 second.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyvista_qt.BackgroundPlotter.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.close" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close the plotter.</p>
 <p>This function closes the window which in turn will
 close the plotter through <cite>signal_close</cite>.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyvista_qt.BackgroundPlotter.reset_key_events">
-<code class="sig-name descname">reset_key_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.reset_key_events" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.reset_key_events">
+<code class="sig-name descname">reset_key_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.reset_key_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset all of the key press events to their defaults.</p>
 <p>Handles closing configuration for q-key.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyvista_qt.BackgroundPlotter.scale_axes_dialog">
-<code class="sig-name descname">scale_axes_dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.scale_axes_dialog" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.scale_axes_dialog">
+<code class="sig-name descname">scale_axes_dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.scale_axes_dialog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open scale axes dialog.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyvista_qt.BackgroundPlotter.update_app_icon">
-<code class="sig-name descname">update_app_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.update_app_icon" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.update_app_icon">
+<code class="sig-name descname">update_app_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.update_app_icon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update the app icon if the user is not trying to resize the window.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyvista_qt.BackgroundPlotter.window_size">
-<em class="property">property </em><code class="sig-name descname">window_size</code><a class="headerlink" href="#pyvista_qt.BackgroundPlotter.window_size" title="Permalink to this definition">¶</a></dt>
+<dt id="pyvistaqt.BackgroundPlotter.window_size">
+<em class="property">property </em><code class="sig-name descname">window_size</code><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.window_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return render window size.</p>
 </dd></dl>
 
