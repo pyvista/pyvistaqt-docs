@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PyVista PyQt Interface" href="qt_plotting.html" /> 
+    <link rel="next" title="pyvistaqt Usage" href="qt_plotting.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,7 +93,7 @@
             
               <p class="caption"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qt_plotting.html">PyVista PyQt Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt_plotting.html">pyvistaqt Usage</a></li>
 </ul>
 
             
@@ -156,22 +156,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-started">
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>The python package <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> extends the
+functionality of <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> through the usage of <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>.  Since <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> operates in a separate thread than VTK, you can similtaniously have an active VTK plot and a non-blocking Python session.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="_images/qt_multiplot.png"><img alt="_images/qt_multiplot.png" src="_images/qt_multiplot.png" style="width: 450pt;" /></a>
+<p class="caption"><span class="caption-text">pyvistaqt BackgroundPlotter</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>Installation using <code class="docutils literal notranslate"><span class="pre">pip</span></code> is simply:</p>
+<p>Installation using <code class="docutils literal notranslate"><span class="pre">pip</span></code> is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pyvistaqt
 </pre></div>
 </div>
-<p>You can also visit <a class="reference external" href="https://pypi.org/project/pyvista/">PyPi</a> or
-<a class="reference external" href="https://github.com/pyvista/pyvista">GitHub</a> to download the source.</p>
+<p>You can also visit <a class="reference external" href="https://pypi.org/project/pyvistaqt/">PyPi</a> or
+<a class="reference external" href="https://github.com/pyvista/pyvistaqt">GitHub</a> to download the source.</p>
+</div>
+<div class="section" id="brief-example">
+<h1>Brief Example<a class="headerlink" href="#brief-example" title="Permalink to this headline">¶</a></h1>
+<p>Create an instance of the <code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> and plot a sphere.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
+
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">()</span>
+
+<span class="n">plotter</span> <span class="o">=</span> <span class="n">BackgroundPlotter</span><span class="p">()</span>
+<span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>While <code class="docutils literal notranslate"><span class="pre">pyvista-qt</span></code> is under the MIT license, <code class="docutils literal notranslate"><span class="pre">pyqt5</span></code> is subject to
+the GPL license.  Please see deails at
+<a class="reference external" href="https://www.riverbankcomputing.com/commercial/license-faq">Riverbank License FAQ</a>.</p>
 </div>
-<div class="section" id="project-index">
-<h1>Project Index<a class="headerlink" href="#project-index" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-</ul>
 </div>
 
 
@@ -182,7 +204,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qt_plotting.html" class="btn btn-neutral float-right" title="PyVista PyQt Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="qt_plotting.html" class="btn btn-neutral float-right" title="pyvistaqt Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
