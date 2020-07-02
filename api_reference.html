@@ -1,0 +1,556 @@
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API Reference &mdash; PyVistaQt 0.1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+ 
+
+<meta name="description" content="3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK)">
+<meta name="author" content="PyVista Developers">
+<meta name="keywords" content="python, 3D, visualization, plotting, mesh, meshviewer, vtk, open-source">
+
+<!-- this contains PyVista's Google analytics code - please don't copy/paste our tracking ID -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+  ga('create', 'UA-140243896-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/pyvista_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background-plotter">Background Plotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#qtinteractor">QtInteractor</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">
+            
+                Getting Connected
+            
+            </span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="http://slack.pyvista.org"><i class="fa fa-slack fa-fw"></i> Slack Community</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/pyvista/pyvista-support"><i class="fa fa-comment fa-fw"></i> Support</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/pyvista/pyvistaqt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/pyvista/pyvistaqt/blob/master/CONTRIBUTING.md"><i class="fa fa-gavel fa-fw"></i> Contributing</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyVistaQt</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>API Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background-plotter">
+<h2>Background Plotter<a class="headerlink" href="#background-plotter" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.ICON_TIME_STEP" title="pyvistaqt.BackgroundPlotter.ICON_TIME_STEP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ICON_TIME_STEP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.window_size" title="pyvistaqt.BackgroundPlotter.window_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">window_size</span></code></a></p></td>
+<td><p>Return render window size.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.add_callback" title="pyvistaqt.BackgroundPlotter.add_callback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_callback</span></code></a>(func[, interval, count])</p></td>
+<td><p>Add a function that can update the scene in the background.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.close" title="pyvistaqt.BackgroundPlotter.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close the plotter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.reset_key_events" title="pyvistaqt.BackgroundPlotter.reset_key_events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_key_events</span></code></a>()</p></td>
+<td><p>Reset all of the key press events to their defaults.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.scale_axes_dialog" title="pyvistaqt.BackgroundPlotter.scale_axes_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_axes_dialog</span></code></a>([show])</p></td>
+<td><p>Open scale axes dialog.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.update_app_icon" title="pyvistaqt.BackgroundPlotter.update_app_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_app_icon</span></code></a>()</p></td>
+<td><p>Update the app icon if the user is not trying to resize the window.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt id="pyvistaqt.BackgroundPlotter">
+<em class="property">class </em><code class="sig-prename descclassname">pyvistaqt.</code><code class="sig-name descname">BackgroundPlotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">app</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_quit_keypress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">toolbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">menu_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.plotting.QtInteractor</span></code></p>
+<p>Qt interactive plotter.</p>
+<p>Background plotter for pyvista that allows you to maintain an
+interactive plotting window without blocking the main python
+thread.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>show</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Show the plotting window.  If <code class="docutils literal notranslate"><span class="pre">False</span></code>, show this window by
+running <code class="docutils literal notranslate"><span class="pre">show()</span></code></p></li>
+<li><p><strong>app</strong> (<em>PyQt5.QtWidgets.QApplication</em><em>, </em><em>optional</em>) – Creates a <cite>QApplication</cite> if left as <cite>None</cite>.</p></li>
+<li><p><strong>window_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><em>list</em></a><em>, </em><em>optional</em>) – Window size in pixels.  Defaults to <code class="docutils literal notranslate"><span class="pre">[1024,</span> <span class="pre">768]</span></code></p></li>
+<li><p><strong>off_screen</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Renders off screen when True.  Useful for automated
+screenshots or debug testing.</p></li>
+<li><p><strong>allow_quit_keypress</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Allow user to exit by pressing <code class="docutils literal notranslate"><span class="pre">&quot;q&quot;</span></code>.</p></li>
+<li><p><strong>menu_bar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Display the default main menu. Defaults to True.</p></li>
+<li><p><strong>toolbar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Display the default camera toolbar. Defaults to True.</p></li>
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Title of plotting window.</p></li>
+<li><p><strong>multi_samples</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The number of multi-samples used to mitigate aliasing. 4 is a
+good default but 8 will have better results with a potential
+impact on performance.</p></li>
+<li><p><strong>line_smoothing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, enable line smothing</p></li>
+<li><p><strong>point_smoothing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, enable point smothing</p></li>
+<li><p><strong>polygon_smoothing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, enable polygon smothing</p></li>
+<li><p><strong>auto_update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Automatic update rate in seconds.  Useful for automatically
+updating the render window when actors are change without
+being automatically <code class="docutils literal notranslate"><span class="pre">Modified</span></code>.  If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, update
+rate will be 1 second.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plotter</span> <span class="o">=</span> <span class="n">BackgroundPlotter</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt id="pyvistaqt.BackgroundPlotter.ICON_TIME_STEP">
+<code class="sig-name descname">ICON_TIME_STEP</code><em class="property"> = 5.0</em><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.ICON_TIME_STEP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.add_callback">
+<code class="sig-name descname">add_callback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">interval</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">count</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.add_callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a function that can update the scene in the background.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>callable</em>) – Function to be called with no arguments.</p></li>
+<li><p><strong>interval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Time interval between calls to <cite>func</cite> in milliseconds.</p></li>
+<li><p><strong>count</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Number of times <cite>func</cite> will be called. If None,
+<cite>func</cite> will be called until the main window is closed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the plotter.</p>
+<p>This function closes the window which in turn will
+close the plotter through <cite>signal_close</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.reset_key_events">
+<code class="sig-name descname">reset_key_events</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.reset_key_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset all of the key press events to their defaults.</p>
+<p>Handles closing configuration for q-key.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.scale_axes_dialog">
+<code class="sig-name descname">scale_axes_dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.scale_axes_dialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open scale axes dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.update_app_icon">
+<code class="sig-name descname">update_app_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.update_app_icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the app icon if the user is not trying to resize the window.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.window_size">
+<em class="property">property </em><code class="sig-name descname">window_size</code><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.window_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return render window size.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="qtinteractor">
+<h2>QtInteractor<a class="headerlink" href="#qtinteractor" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.key_press_event_signal" title="pyvistaqt.QtInteractor.key_press_event_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">key_press_event_signal</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.render_signal" title="pyvistaqt.QtInteractor.render_signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render_signal</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.add_menu_bar" title="pyvistaqt.QtInteractor.add_menu_bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_menu_bar</span></code></a>()</p></td>
+<td><p>Add the main menu bar.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.add_toolbars" title="pyvistaqt.QtInteractor.add_toolbars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_toolbars</span></code></a>()</p></td>
+<td><p>Add the toolbars.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.clear_camera_positions" title="pyvistaqt.QtInteractor.clear_camera_positions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_camera_positions</span></code></a>()</p></td>
+<td><p>Clear all camera positions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.close" title="pyvistaqt.QtInteractor.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Quit application.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.dragEnterEvent" title="pyvistaqt.QtInteractor.dragEnterEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dragEnterEvent</span></code></a>(event)</p></td>
+<td><p>Event is called when something is dropped onto the vtk window.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.dropEvent" title="pyvistaqt.QtInteractor.dropEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropEvent</span></code></a>(event)</p></td>
+<td><p>Event is called after dragEnterEvent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.key_press_event" title="pyvistaqt.QtInteractor.key_press_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">key_press_event</span></code></a>(obj, event)</p></td>
+<td><p>Call <cite>key_press_event</cite> using a signal.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.render" title="pyvistaqt.QtInteractor.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>()</p></td>
+<td><p>Override the <code class="docutils literal notranslate"><span class="pre">render</span></code> method to handle threading issues.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.QtInteractor.save_camera_position" title="pyvistaqt.QtInteractor.save_camera_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_camera_position</span></code></a>()</p></td>
+<td><p>Save camera position to saved camera menu for recall.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt id="pyvistaqt.QtInteractor">
+<em class="property">class </em><code class="sig-prename descclassname">pyvistaqt.</code><code class="sig-name descname">QtInteractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multi_samples</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_smoothing</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">point_smoothing</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">polygon_smoothing</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">splitting_position</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_update</span><span class="o">=</span><span class="default_value">5.0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.plotting.QVTKRenderWindowInteractorAdapter</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.plotting.plotting.BasePlotter</span></code></p>
+<p>Extend QVTKRenderWindowInteractor class.</p>
+<p>This adds the methods available to pyvista.Plotter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent</strong> – Qt parent.</p></li>
+<li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Title of plotting window.</p></li>
+<li><p><strong>multi_samples</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The number of multi-samples used to mitigate aliasing. 4 is a
+good default but 8 will have better results with a potential
+impact on performance.</p></li>
+<li><p><strong>line_smoothing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, enable line smothing</p></li>
+<li><p><strong>point_smoothing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, enable point smothing</p></li>
+<li><p><strong>polygon_smoothing</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, enable polygon smothing</p></li>
+<li><p><strong>auto_update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Automatic update rate in seconds.  Useful for automatically
+updating the render window when actors are change without
+being automatically <code class="docutils literal notranslate"><span class="pre">Modified</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.add_menu_bar">
+<code class="sig-name descname">add_menu_bar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.add_menu_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the main menu bar.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.add_toolbars">
+<code class="sig-name descname">add_toolbars</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.add_toolbars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the toolbars.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.clear_camera_positions">
+<code class="sig-name descname">clear_camera_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.clear_camera_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear all camera positions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quit application.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.dragEnterEvent">
+<code class="sig-name descname">dragEnterEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.dragEnterEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event is called when something is dropped onto the vtk window.</p>
+<p>Only triggers event when event contains file paths that
+exist.  User can drop anything in this window and we only want
+to allow files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.dropEvent">
+<code class="sig-name descname">dropEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.dropEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event is called after dragEnterEvent.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.key_press_event">
+<code class="sig-name descname">key_press_event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.key_press_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <cite>key_press_event</cite> using a signal.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyvistaqt.QtInteractor.key_press_event_signal">
+<code class="sig-name descname">key_press_event_signal</code><a class="headerlink" href="#pyvistaqt.QtInteractor.key_press_event_signal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Override the <code class="docutils literal notranslate"><span class="pre">render</span></code> method to handle threading issues.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyvistaqt.QtInteractor.render_signal">
+<code class="sig-name descname">render_signal</code><a class="headerlink" href="#pyvistaqt.QtInteractor.render_signal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.QtInteractor.save_camera_position">
+<code class="sig-name descname">save_camera_position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.QtInteractor.save_camera_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save camera position to saved camera menu for recall.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017-2020, The PyVista Developers
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
@@ -7,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyvistaqt &mdash; PyVista 0.1.1 documentation</title>
+  <title>pyvistaqt &mdash; PyVistaQt 0.1.1 documentation</title>
   
 
   
@@ -41,7 +42,26 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="pyvistaqt Usage" href="qt_plotting.html" /> 
+    <link rel="next" title="Usage" href="usage.html" />
+ 
+
+<meta name="description" content="3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK)">
+<meta name="author" content="PyVista Developers">
+<meta name="keywords" content="python, 3D, visualization, plotting, mesh, meshviewer, vtk, open-source">
+
+<!-- this contains PyVista's Google analytics code - please don't copy/paste our tracking ID -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+  ga('create', 'UA-140243896-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,18 +108,45 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
             
             
-              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qt_plotting.html">pyvistaqt Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">
+            
+                Getting Connected
+            
+            </span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="http://slack.pyvista.org"><i class="fa fa-slack fa-fw"></i> Slack Community</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/pyvista/pyvista-support"><i class="fa fa-comment fa-fw"></i> Support</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/pyvista/pyvistaqt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/pyvista/pyvistaqt/blob/master/CONTRIBUTING.md"><i class="fa fa-gavel fa-fw"></i> Contributing</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -111,7 +158,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">PyVista</a>
+          <a href="#">PyVistaQt</a>
         
       </nav>
 
@@ -161,11 +208,17 @@
             
   <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://pypi.org/project/pyvistaqt/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pyvistaqt" /></a>
+<a class="reference external image-reference" href="https://anaconda.org/conda-forge/pyvistaqt"><img alt="conda-forge" src="https://img.shields.io/conda/vn/conda-forge/pyvistaqt" /></a>
+<a class="reference external image-reference" href="https://dev.azure.com/pyvista/PyVista/_build/latest?definitionId=9&amp;branchName=master"><img alt="Azure Pipelines" src="https://dev.azure.com/pyvista/PyVista/_apis/build/status/pyvista.pyvistaqt?branchName=master" /></a>
+<a class="reference external image-reference" href="https://opensource.org/licenses/MIT"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 <p>The python package <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> extends the
 functionality of <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> through the usage of <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>.  Since <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> operates in a separate thread than VTK, you can similtaniously have an active VTK plot and a non-blocking Python session.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="_images/qt_multiplot.png"><img alt="_images/qt_multiplot.png" src="_images/qt_multiplot.png" style="width: 450pt;" /></a>
 <p class="caption"><span class="caption-text">pyvistaqt BackgroundPlotter</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 <div class="section" id="getting-started">
@@ -174,12 +227,18 @@ functionality of <code class="docutils literal notranslate"><span class="pre">py
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pyvistaqt
 </pre></div>
 </div>
-<p>You can also visit <a class="reference external" href="https://pypi.org/project/pyvistaqt/">PyPi</a> or
-<a class="reference external" href="https://github.com/pyvista/pyvistaqt">GitHub</a> to download the source.</p>
+<p>To install this package with <code class="docutils literal notranslate"><span class="pre">conda</span></code> run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge pyvistaqt
+</pre></div>
 </div>
+<p>You can also visit <a class="reference external" href="https://pypi.org/project/pyvistaqt/">PyPI</a> or
+<a class="reference external" href="https://github.com/pyvista/pyvistaqt">GitHub</a> to download the source.</p>
+<p>Once installed, use the <a class="reference internal" href="api_reference.html#pyvistaqt.BackgroundPlotter" title="pyvistaqt.BackgroundPlotter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code></a> like any PyVista
+plotter.</p>
 <div class="section" id="brief-example">
-<h1>Brief Example<a class="headerlink" href="#brief-example" title="Permalink to this headline">¶</a></h1>
-<p>Create an instance of the <code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> and plot a sphere.</p>
+<h2>Brief Example<a class="headerlink" href="#brief-example" title="Permalink to this headline">¶</a></h2>
+<p>Create an instance of the <a class="reference internal" href="api_reference.html#pyvistaqt.BackgroundPlotter" title="pyvistaqt.BackgroundPlotter"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code></a> and plot a
+sphere.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
 
@@ -191,12 +250,13 @@ functionality of <code class="docutils literal notranslate"><span class="pre">py
 </div>
 <div class="toctree-wrapper compound">
 </div>
+</div>
+</div>
 <div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
 <p>While <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> is under the MIT license, <code class="docutils literal notranslate"><span class="pre">pyqt5</span></code> is subject to
 the GPL license.  Please see deails at
 <a class="reference external" href="https://www.riverbankcomputing.com/commercial/license-faq">Riverbank License FAQ</a>.</p>
-</div>
 </div>
 
 
@@ -207,7 +267,7 @@ the GPL license.  Please see deails at
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="qt_plotting.html" class="btn btn-neutral float-right" title="pyvistaqt Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
