@@ -265,14 +265,17 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.scale_axes_dialog" title="pyvistaqt.BackgroundPlotter.scale_axes_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_axes_dialog</span></code></a>([show])</p></td>
 <td><p>Open scale axes dialog.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.update_app_icon" title="pyvistaqt.BackgroundPlotter.update_app_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_app_icon</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.set_icon" title="pyvistaqt.BackgroundPlotter.set_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_icon</span></code></a>(img)</p></td>
+<td><p>Set the icon image.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyvistaqt.BackgroundPlotter.update_app_icon" title="pyvistaqt.BackgroundPlotter.update_app_icon"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_app_icon</span></code></a>()</p></td>
 <td><p>Update the app icon if the user is not trying to resize the window.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py class">
 <dt id="pyvistaqt.BackgroundPlotter">
-<em class="property">class </em><code class="sig-prename descclassname">pyvistaqt.</code><code class="sig-name descname">BackgroundPlotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">app</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_quit_keypress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">toolbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">menu_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyvistaqt.</code><code class="sig-name descname">BackgroundPlotter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">app</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">window_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">off_screen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allow_quit_keypress</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">toolbar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">menu_bar</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">update_app_icon</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.plotting.QtInteractor</span></code></p>
 <p>Qt interactive plotter.</p>
 <p>Background plotter for pyvista that allows you to maintain an
@@ -288,8 +291,10 @@ running <code class="docutils literal notranslate"><span class="pre">show()</spa
 <li><p><strong>off_screen</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Renders off screen when True.  Useful for automated
 screenshots or debug testing.</p></li>
 <li><p><strong>allow_quit_keypress</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Allow user to exit by pressing <code class="docutils literal notranslate"><span class="pre">&quot;q&quot;</span></code>.</p></li>
-<li><p><strong>menu_bar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Display the default main menu. Defaults to True.</p></li>
 <li><p><strong>toolbar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Display the default camera toolbar. Defaults to True.</p></li>
+<li><p><strong>menu_bar</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Display the default main menu. Defaults to True.</p></li>
+<li><p><strong>update_app_icon</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a>) – If True, update_app_icon will be called automatically to update the
+Qt app icon based on the current rendering output.</p></li>
 <li><p><strong>title</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – Title of plotting window.</p></li>
 <li><p><strong>multi_samples</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The number of multi-samples used to mitigate aliasing. 4 is a
 good default but 8 will have better results with a potential
@@ -351,6 +356,22 @@ close the plotter through <cite>signal_close</cite>.</p>
 <dt id="pyvistaqt.BackgroundPlotter.scale_axes_dialog">
 <code class="sig-name descname">scale_axes_dialog</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.scale_axes_dialog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open scale axes dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyvistaqt.BackgroundPlotter.set_icon">
+<code class="sig-name descname">set_icon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">img</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyvistaqt.BackgroundPlotter.set_icon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the icon image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>img</strong> (<em>ndarray</em><em>, </em><em>shape</em><em> (</em><em>w</em><em>, </em><em>h</em><em>, </em><em>c</em><em>) </em><em>| str</em>) – The image. Should be uint8 and square (w == h).
+Can have 3 or 4 color/alpha channels (<code class="docutils literal notranslate"><span class="pre">c</span></code>).
+Can also be a string path that QIcon can load.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Currently string paths can silently fail, so make sure your path
+is something that produces a valid <code class="docutils literal notranslate"><span class="pre">QIcon(img)</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
