@@ -213,7 +213,9 @@
 <a class="reference external image-reference" href="https://dev.azure.com/pyvista/PyVista/_build/latest?definitionId=9&amp;branchName=master"><img alt="Azure Pipelines" src="https://dev.azure.com/pyvista/PyVista/_apis/build/status/pyvista.pyvistaqt?branchName=master" /></a>
 <a class="reference external image-reference" href="https://opensource.org/licenses/MIT"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 <p>The python package <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> extends the
-functionality of <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> through the usage of <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code>.  Since <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> operates in a separate thread than VTK, you can similtaniously have an active VTK plot and a non-blocking Python session.</p>
+functionality of <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> through the usage of <em>Qt</em>.
+Since <em>Qt</em> applications operates in a separate thread than VTK,
+you can simultaneously have an active VTK plot and a non-blocking Python session.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="_images/qt_multiplot.png"><img alt="_images/qt_multiplot.png" src="_images/qt_multiplot.png" style="width: 450pt;" /></a>
 <p class="caption"><span class="caption-text">pyvistaqt BackgroundPlotter</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -254,9 +256,15 @@ sphere.</p>
 </div>
 <div class="section" id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
-<p>While <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> is under the MIT license, <code class="docutils literal notranslate"><span class="pre">pyqt5</span></code> is subject to
-the GPL license.  Please see deails at
+<p><code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> is under the MIT license.
+However, Qt bindings have licenses of their own.</p>
+<p>Historically, <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> has used <code class="docutils literal notranslate"><span class="pre">pyqt5</span></code>, which is subject
+to the GPL license. See details at
 <a class="reference external" href="https://www.riverbankcomputing.com/commercial/license-faq">Riverbank License FAQ</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code> is transitioning to using <code class="docutils literal notranslate"><span class="pre">qtpy</span></code></p>
+<p>&gt; QtPy is a small abstraction layer that lets you write applications using a single API call to either PyQt or PySide.</p>
+<p>Please refer to the <a class="reference external" href="https://github.com/spyder-ide/qtpy">QtPy documentation</a>
+to learn more.</p>
 </div>
 
 
