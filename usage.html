@@ -224,12 +224,24 @@ The <code class="docutils literal notranslate"><span class="pre">pyvistaqt.QtInt
 of the <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> class within a Qt application.
 This simplifies adding meshes, updating, and controlling them when using
 Qt.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do keep in mind that the <code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> <strong>does not</strong> create its
+own event loop by default. By design, the plotter will look for an
+active instance of <code class="docutils literal notranslate"><span class="pre">QApplication</span></code> instead. So in the end, it is up to the
+user to manage this event loop and there are several ways to achieve this.
+For example, it’s possible to start Python interactively with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-i</span></code>,</p>
+<blockquote>
+<div><p>use <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or execute the Qt event loop by adding <code class="docutils literal notranslate"><span class="pre">plotter.app.exec_()</span></code></p>
+</div></blockquote>
+<p>to the end of the following code.</p>
+</div>
 <div class="section" id="background-plotting">
 <h2>Background Plotting<a class="headerlink" href="#background-plotting" title="Permalink to this headline">¶</a></h2>
 <p>Normal PyVista plotting windows exhibit blocking behavior, but it is possible
 to plot in the background and update the plotter in real-time using the
 <code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> object.  This requires <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code>, but otherwise appears
-and functions like a normal PyVista <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> instance.  For example:</p>
+and functions like a normal PyVista <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> instance. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
 
